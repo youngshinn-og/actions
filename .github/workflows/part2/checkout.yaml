@@ -6,7 +6,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: checkout file list
-          run: cat README.md
+          run: cat README.md # 레포지토리 파일을 읽지 못해서 오류 발생! 
     
     checkout:
         runs-on: ubuntu-latest
