@@ -12,5 +12,5 @@ jobs:
 
     - name: check output
       run: |
-        echo ${{ steps.check-output.test }}
+        echo ${{ steps.check-output.outputs.test }}
 
