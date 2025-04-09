@@ -25,6 +25,6 @@ jobs:
         echo ${{ secrets.PERSONAL_ACCESS_TOKEN }} | gh auth login --with-token
     - name: create-repo
       run: |
-        gh repo create shin-action/${{ inputs.prefix }}-${{ inputs.name}} --public --add-readme
+        gh repo create actions/${{ inputs.prefix }}-${{ inputs.name}} --public --add-readme
 
           
