@@ -36,7 +36,7 @@ jobs:
             "attachments": [
                 {"pretext": "create repo result",
                  "color": "28a745",
-                  "fileds": [
+                  "fields": [
                     {
                      "title": "create repo result ${{ steps.create-repo.outcome }}",
                      "short": true,
