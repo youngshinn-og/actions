@@ -26,5 +26,28 @@ jobs:
     - name: create-repo
       run: |
         gh repo create youngshinn-og/${{ inputs.prefix }}-${{ inputs.name}} --public --add-readme
+    - name: slack
+      if: always()
+      id: create-repo
+      uses: slackapi/slack-github-action@v1.24.0
+      with:
+        payload: |
+          {
+            "attachments": [
+                {"pretext": "create repo result",
+                 "color": "28a745",
+                  "fileds": [
+                    {
+                     "title": "create repo result ${{ steps.create-repo.outcome }}",
+                     "short": true,
+                     "value": "${{ inputs.prefix }}-${{ inputs.name }}"
+                    }
+                  ]
+                }
+            ]
+          }    
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
 
           
